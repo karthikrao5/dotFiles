@@ -1,4 +1,4 @@
-set number
+...set number
 set relativenumber
 set autoindent
 set tabstop=4
@@ -39,7 +39,18 @@ colorscheme gruvbox
 " Nerd tree Config
 autocmd VimEnter * wincmd p
 
-let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '✹'
@@ -63,6 +74,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "Coc Config
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
+  \ 'coc-pairs'
   \ ]
 "Go syntax highlighting
 let g:go_highlight_fields = 1

@@ -1,4 +1,4 @@
-set number
+...set number
 set relativenumber
 set autoindent
 set tabstop=4
@@ -39,7 +39,18 @@ colorscheme gruvbox
 " Nerd tree Config
 autocmd VimEnter * wincmd p
 
-let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
 
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '✹'
