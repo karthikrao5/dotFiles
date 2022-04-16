@@ -1,12 +1,11 @@
-
-
-
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -82,6 +81,7 @@ plugins=(
 	zsh-z
 	aws
     zsh-autosuggestions
+	pyenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,7 +117,9 @@ eval $(thefuck --alias)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tf="terraform"
 eval "$(starship init zsh)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-
+neofetch
 
 
